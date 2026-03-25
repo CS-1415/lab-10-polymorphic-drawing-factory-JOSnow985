@@ -5,7 +5,7 @@
 public interface IGraphic2DFactory
 {
     // A string describing what type of graphic will be built
-    public static readonly string Name = "";
+    string Name { get; }
 
     // draws the graphic on the screen; return true if successful
     bool Display();
