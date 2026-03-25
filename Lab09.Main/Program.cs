@@ -1,8 +1,4 @@
 ﻿using Lab09;
 
-List<IGraphic2D> shapes = new List<IGraphic2D> {
-
-};
-
-Console.Clear();
-AbstractGraphic2D.Display(shapes);
+// List of instances of available factories, currently empty without concrete factories
+List<IGraphic2DFactory> availableShapeTypes = [];
