@@ -15,6 +15,7 @@ while (true)
     switch (Console.ReadKey(true).KeyChar)
     {
         case '1':   // Display Drawing
+            DisplayDrawing();
             break;
         case '2':   // Add Graphic
             break;
@@ -25,4 +26,11 @@ while (true)
         default:
             break;
     }
+}
+
+void DisplayDrawing()
+{
+    Console.Clear();
+    AbstractGraphic2D.Display(builtShapes);
+    Console.ReadLine();
 }
