@@ -1,7 +1,7 @@
 ﻿using Lab09;
 
 // List of instances of available factories, currently empty without concrete factories
-List<IGraphic2DFactory> availableShapeTypes = [new RectangleFactory()];
+List<IGraphic2DFactory> availableShapeTypes = [new RectangleFactory(), new CircleFactory()];
 
 // List of shapes constituting the drawing
 List<IGraphic2D> builtShapes = [];

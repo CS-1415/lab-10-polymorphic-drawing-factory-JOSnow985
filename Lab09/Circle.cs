@@ -28,10 +28,56 @@ public class Circle : AbstractGraphic2D
 
 public class CircleFactory : IGraphic2DFactory
 {
-    public string Name => throw new NotImplementedException();
+    public string Name => "Circle";
 
     public IGraphic2D Create()
     {
-        throw new NotImplementedException();
+        List<decimal> values = [];
+
+        for (int x = 0; x < 3; x++)
+        {
+            bool inputAccepted = false;
+            while (!inputAccepted)
+            {
+                Console.Write("Please enter a decimal value for the ");
+                // Print an instruction based on the value we're asking for
+                switch (x)
+                {
+                    case 0:
+                        Console.WriteLine("X coordinate of the center of the new circle, it must be 0 or greater.");
+                        break;
+                    case 1:
+                        Console.WriteLine("Y coordinate of the center of the new circle, it must be 0 or greater.");
+                        break;
+                    case 2:
+                        Console.WriteLine("Radius of the new circle, it must be greater than 0.");
+                        break;
+                }
+
+                // Check if we get valid decimal and if it matches the conditions for the value we need
+                if(Decimal.TryParse(Console.ReadLine()?.Trim(), out decimal userInput))
+                {
+                    if (x < 2)  // Left and Top need values 0 or greater
+                    {
+                        if (userInput >= 0)
+                        {
+                            inputAccepted = true;
+                            values.Add(userInput);
+                        }
+                    }
+                    else        // Width and Height need values greater than 0
+                    {
+                        if (userInput > 0)
+                        {
+                            inputAccepted = true;
+                            values.Add(userInput);
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        return new Circle(values[0], values[1], values[2]) { DisplayChar = ' ', BackgroundColor = ConsoleColor.Blue, ForegroundColor = ConsoleColor.Black };
     }
 }
