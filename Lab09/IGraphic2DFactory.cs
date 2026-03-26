@@ -1,15 +1,11 @@
 ﻿namespace Lab09;
 
-// Represents a graphical element (i.e. a shape) that can be printed to the
-// console.
+// Interface for a factory that generates a particular type of shape
 public interface IGraphic2DFactory
 {
-    // A string describing what type of graphic will be built
+    // A string describing what type of shape this factory builds
     string Name { get; }
 
-    // draws the graphic on the screen; return true if successful
-    bool Display();
-
-    // creates a new graphic object
+    // No parameters, returns an object of type IGraphic2D
     IGraphic2D Create();
 }
