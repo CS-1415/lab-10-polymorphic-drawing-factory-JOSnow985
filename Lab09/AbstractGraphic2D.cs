@@ -52,7 +52,7 @@ public abstract class AbstractGraphic2D : IGraphic2D
             {
                 if (ContainsPoint(column, row))
                 {
-                    if (column < Console.BufferWidth && row < Console.BufferHeight)
+                    if (column < Console.BufferWidth && row < Console.BufferHeight && column >= 0 && row >= 0)
                     {
                         Console.SetCursorPosition(column, row);
                         Console.Write(DisplayChar);
