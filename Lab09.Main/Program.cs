@@ -21,6 +21,7 @@ while (true)
             AddGraphic();
             break;
         case '3':   // Remove Graphic
+            RemoveGraphic();
             break;
         case '4':   // Exit
             return;
@@ -62,6 +63,31 @@ void AddGraphic()
                     indexIsValid = true;
                     IGraphic2D newShape = availableShapeTypes[selectedIndex].Create();
                     builtShapes.Add(newShape);
+                }
+            }
+        }
+    }
+}
+
+// Displays the number of shapes in the drawing, user specifies an index to remove
+void RemoveGraphic()
+{
+    Console.Clear();
+    Console.WriteLine("What is the index of the shape you want to remove?");
+    Console.WriteLine($"There are currently {builtShapes.Count} shapes in the drawing.");
+    // Collect user index
+    bool indexIsValid = false;
+    while (!indexIsValid)
+    {
+        string userInput = Console.ReadLine()!;
+        if (!string.IsNullOrWhiteSpace(userInput))
+        {
+            if (Int32.TryParse(userInput.Trim(), out int selectedIndex))
+            {
+                if (selectedIndex >= 0 && selectedIndex < builtShapes.Count)
+                {
+                    indexIsValid = true;
+                    builtShapes.RemoveAt(selectedIndex);
                 }
             }
         }
