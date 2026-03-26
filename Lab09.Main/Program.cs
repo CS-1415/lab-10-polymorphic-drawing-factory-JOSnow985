@@ -33,7 +33,7 @@ void DisplayDrawing()
 {
     Console.Clear();
     AbstractGraphic2D.Display(builtShapes);
-    Console.ReadLine();
+    Console.ReadKey();
 }
 
 void AddGraphic()
