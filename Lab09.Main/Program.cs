@@ -29,6 +29,8 @@ while (true)
     }
 }
 
+
+// --- Methods ---
 void DisplayDrawing()
 {
     Console.Clear();
