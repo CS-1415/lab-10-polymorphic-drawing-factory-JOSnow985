@@ -41,6 +41,8 @@ void DisplayDrawing()
     Console.ReadKey();
 }
 
+// Displays a list of available factories for the user to choose from,
+// takes a user input and adds a new shape from that factory to the drawing.
 void AddGraphic()
 {
     Console.Clear();
