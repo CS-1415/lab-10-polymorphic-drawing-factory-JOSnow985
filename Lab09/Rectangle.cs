@@ -21,3 +21,18 @@ public class Rectangle : AbstractGraphic2D
 
     public override bool ContainsPoint(decimal x, decimal y) => LowerBoundX <= x && x <= UpperBoundX && LowerBoundY <= y && y <= UpperBoundY;
 }
+
+public class RectangleFactory : IGraphic2DFactory
+{
+    public string Name => throw new NotImplementedException();
+
+    public IGraphic2D Create()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Display()
+    {
+        throw new NotImplementedException();
+    }
+}

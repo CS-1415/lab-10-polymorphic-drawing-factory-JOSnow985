@@ -25,3 +25,18 @@ public class Circle : AbstractGraphic2D
         return distanceToCenterSquared <= squaredRadius;
     }
 }
+
+public class CircleFactory : IGraphic2DFactory
+{
+    public string Name => throw new NotImplementedException();
+
+    public IGraphic2D Create()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Display()
+    {
+        throw new NotImplementedException();
+    }
+}
