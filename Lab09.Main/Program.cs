@@ -24,6 +24,8 @@ while (true)
             RemoveGraphic();
             break;
         case '4':   // Exit
+            Console.Clear();
+            Console.WriteLine("Bye!");
             return;
         default:
             break;
