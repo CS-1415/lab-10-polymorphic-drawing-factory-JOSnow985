@@ -18,6 +18,7 @@ while (true)
             DisplayDrawing();
             break;
         case '2':   // Add Graphic
+            AddGraphic();
             break;
         case '3':   // Remove Graphic
             break;
@@ -33,4 +34,34 @@ void DisplayDrawing()
     Console.Clear();
     AbstractGraphic2D.Display(builtShapes);
     Console.ReadLine();
+}
+
+void AddGraphic()
+{
+    Console.Clear();
+    Console.WriteLine("Which shape do you want to add?");
+    int i = 0;
+    foreach (IGraphic2DFactory factory in availableShapeTypes)
+    {
+        Console.WriteLine($"[{i}] {factory.Name}");
+        i++;
+    }
+    // Collect user index
+    bool indexIsValid = false;
+    while (!indexIsValid)
+    {
+        string userInput = Console.ReadLine()!;
+        if (!string.IsNullOrWhiteSpace(userInput))
+        {
+            if (Int32.TryParse(userInput.Trim(), out int selectedIndex))
+            {
+                if (selectedIndex >= 0 && selectedIndex < availableShapeTypes.Count)
+                {
+                    indexIsValid = true;
+                    IGraphic2D newShape = availableShapeTypes[selectedIndex].Create();
+                    builtShapes.Add(newShape);
+                }
+            }
+        }
+    }
 }
