@@ -30,9 +30,4 @@ public class RectangleFactory : IGraphic2DFactory
     {
         throw new NotImplementedException();
     }
-
-    public bool Display()
-    {
-        throw new NotImplementedException();
-    }
 }

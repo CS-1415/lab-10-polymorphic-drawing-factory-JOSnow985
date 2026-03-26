@@ -34,9 +34,4 @@ public class CircleFactory : IGraphic2DFactory
     {
         throw new NotImplementedException();
     }
-
-    public bool Display()
-    {
-        throw new NotImplementedException();
-    }
 }
